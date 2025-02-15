@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+
+    <title>Resume </title>
+
+    <meta
+      name="description"
+      content="Freebie 62 - Resume Alternate (Tailwind CSS). Check out more at https://pixelcave.com"
+    />
+    <meta name="author" content="pixelcave" />
+
+    <!-- Icons -->
+    <link
+      rel="icon"
+      href="https://cdn.pixelcave.com/favicon.svg"
+      sizes="any"
+      type="image/svg+xml"
+
+    />
+
+    <!-- Inter web font from bunny.net (GDPR compliant) -->
+    <link rel="preconnect" href="https://fonts.bunny.net" />
+    <link
+      href="https://fonts.bunny.net/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS Play CDN (mainly for development/testing purposes) -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+
+    <!-- Tailwind CSS v3 Configuration -->
+    <script>
+      const defaultTheme = tailwind.defaultTheme;
+      const colors = tailwind.colors;
+      const plugin = tailwind.plugin;
+
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Inter", ...defaultTheme.fontFamily.sans],
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Alpine.js -->
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+
+    <!-- Alpine.js (x-cloak - https://alpinejs.dev/directives/cloak) -->
+    <style>
+      [x-cloak] {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Page Container -->
+    <div
+      x-data="{
+        darkMode: false,
+        toggleDarkMode() {
+          this.darkMode = ! this.darkMode;
+
+          // Toggle dark class on html element
+          if (this.darkMode) {
+            document.body.parentNode.classList.add('dark');
+          } else {
+            document.body.parentNode.classList.remove('dark');
+          }
+        }
+      }"
+      class="min-h-dvh min-w-[320px] bg-white text-gray-800 dark:bg-gray-950 dark:text-gray-100"
+    >
+      <!-- Toggle Dark Mode -->
+      <div
+        class="fixed right-0 top-0 z-50 flex size-12 items-center justify-center"
+      >
+        <button
+          x-on:click="toggleDarkMode()"
+          type="button"
+          class="inline-block size-9 text-gray-600 hover:opacity-75 dark:text-gray-400"
+        >
+          <svg
+            x-show="!darkMode"
+            x-cloak
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="inline-block size-6"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2" />
+            <path d="M12 20v2" />
+            <path d="m4.93 4.93 1.41 1.41" />
+            <path d="m17.66 17.66 1.41 1.41" />
+            <path d="M2 12h2" />
+            <path d="M20 12h2" />
+            <path d="m6.34 17.66-1.41 1.41" />
+            <path d="m19.07 4.93-1.41 1.41" />
+          </svg>
+          <svg
+            x-show="darkMode"
+            x-cloak
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="inline-block size-6"
+          >
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+          </svg>
+        </button>
+      </div>
+      <!-- END Toggle Dark Mode -->
+
+      <div class="container mx-auto max-w-7xl">
+        <div class="grid grid-cols-1 md:grid-cols-12">
+          <!-- Info -->
+          <div
+            class="bg-gray-100 p-5 text-left dark:bg-gray-900 md:col-span-4 lg:p-14"
+          >
+            <h1
+              class="leading-tighter mt-5 text-4xl font-extrabold lg:text-6xl"
+            >
+              Tushar<br />
+              Bisht
+            </h1>
+            <h2 class="mt-3 text-xl text-purple-600 dark:text-purple-500">
+              Aspiring Data Analyst
+            </h2>
+            <div class="-mx-5 mt-10 lg:-mx-16">
+              />
+            </div>
+            <p
+              class="mt-10 text-balance leading-relaxed text-gray-700 dark:text-gray-300"
+            >
+            I am dedicated to honing my skills in data analysis and programming.
+            With a strong foundation in C programming and a passion for uncovering insights from complex datasets, I am eager to apply my analytical mindset to real-world challenges. 
+            I have a solid understanding of C language, which I utilize to develop efficient and effective solutions.
+            My goal is to contribute to innovative projects and develop practical solutions while continuously expanding my knowledge and expertise in the ever-evolving field of data analytics. 
+            </p>
+            <div class="mt-10 space-y-5">
+              <div class="flex items-center gap-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="inline-block size-6 flex-none text-purple-600 dark:text-purple-500"
+                >
+                  <path d="M18 8c0 4.5-6 9-6 9s-6-4.5-6-9a6 6 0 0 1 12 0" />
+                  <circle cx="12" cy="8" r="2" />
+                  <path
+                    d="M8.835 14H5a1 1 0 0 0-.9.7l-2 6c-.1.1-.1.2-.1.3 0 .6.4 1 1 1h18c.6 0 1-.4 1-1 0-.1 0-.2-.1-.3l-2-6a1 1 0 0 0-.9-.7h-3.835"
+                  />
+                </svg>
+                <span class="truncate font-medium">Greater Noida, India</span>
+              </div>
+              <div class="flex items-center gap-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="inline-block size-6 flex-none text-purple-600 dark:text-purple-500"
+                >
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+                  />
+                </svg>
+                <span class="truncate font-medium">+91 6397798304</span>
+              </div>
+              <div class="flex items-center gap-5">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="inline-block size-6 flex-none text-purple-600 dark:text-purple-500"
+                >
+                  <path
+                    d="M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h8"
+                  />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  <path d="M19 16v6" />
+                  <path d="M16 19h6" />
+                </svg>
+                <a
+                  href="javascript:void(0)"
+                  class="truncate font-medium text-black underline hover:text-black/75 dark:text-white dark:hover:text-white/75"
+                >
+                  Tusharbisht890@gmail.com
+                </a>
+              </div>
+              <div class="flex items-center gap-5">
+                
+                <a>
+
+                </a>
+
+              </div>
+            </div>
+          </div>
+          <!-- END Info -->
+
+          <!-- Bio -->
+          <div class="mx-auto max-w-2xl space-y-16 p-5 md:col-span-8 md:p-10">
+            <!-- Education -->
+            <div>
+              <div
+                class="mb-8 border-b-4 border-gray-100 py-2.5 dark:border-gray-900"
+              >
+                <h3 class="text-xl font-medium">Education</h3>
+              </div>
+              <ul
+                class="relative space-y-6 pl-6 before:absolute before:bottom-0 before:left-0 before:top-0 before:block before:w-1 before:rounded-full before:bg-purple-50 before:content-[''] dark:before:bg-purple-950"
+              >
+                <li
+                  class="before:border-1 relative before:absolute before:-left-[1.875rem] before:top-6 before:block before:size-4 before:rounded-full before:border-2 before:border-purple-200/75 before:bg-white before:content-[''] dark:before:border-purple-800/75 dark:before:bg-gray-950"
+                >
+                  <h4
+                    class="text-sm font-semibold text-purple-600 dark:text-purple-500"
+                  >
+                    2024-2028
+                  </h4>
+                  <h5 class="mb-2 font-bold">
+                    Bachelor of Computer Applications (Hons.) with Research, Specialization in Data Analytics
+                    Galgotias University
+
+                  </h5>
+                  <p class="text-sm/relaxed text-gray-700 dark:text-gray-300">
+                    Proficient in programming with a solid understanding of C language, and specialized knowledge in data analytics.
+                    Skilled in analyzing complex datasets, developing efficient solutions, and applying analytical tools and techniques.
+                    Committed to continuous learning and contributing to innovative projects that drive impactful results in the field of data analytics.
+                  </p>
+                </li>
+                <li>
+                    
+                </li>
+                  
+              </ul>
+            </div>
+            <!-- END Education -->
+
+            <!-- Work Experience -->
+            <div>
+              <div
+                class="mb-8 border-b-4 border-gray-100 py-2.5 dark:border-gray-900"
+              >
+                <h3 class="text-xl font-medium">skills</h3>
+              </div>
+              <ul
+                class="relative space-y-6 pl-6 before:absolute before:bottom-0 before:left-0 before:top-0 before:block before:w-1 before:rounded-full before:bg-purple-50 before:content-[''] dark:before:bg-purple-950"
+              >
+                <li
+                  class="before:border-1 relative before:absolute before:-left-[1.875rem] before:top-6 before:block before:size-4 before:rounded-full before:border-2 before:border-purple-200/75 before:bg-white before:content-[''] dark:before:border-purple-800/75 dark:before:bg-gray-950"
+                >
+                  <h4
+                    class="text-sm font-semibold text-purple-600 dark:text-purple-500"
+                  >
+                    
+                  </h4>
+                  <h5 class="mb-2 font-bold">
+                  Programming Languages: C - Solid foundation in C programming with practical experience in developing efficient code and debugging.
+
+                  Data Analytics Tools: Excel, SQL, Python, R - Proficient in using these tools for data manipulation, analysis, and visualization.
+
+                  Data Visualization: Tableau, Power BI - Experienced in creating interactive and insightful data visualizations to support decision-making.
+
+                  Database Management: MySQL, PostgreSQL - Skilled in designing, querying, and managing databases to ensure data integrity and accessibility.
+
+                  Statistical Analysis: Strong understanding of statistical methods and their application in data analysis.
+
+                  Problem-Solving: Adept at identifying issues, analyzing data, and developing effective solutions.
+
+                  Analytical Thinking: Capable of interpreting complex datasets and drawing meaningful insights.
+
+                  Research and Data Collection: Experienced in conducting thorough research and gathering data from various sources.
+
+                  Microsoft Office Suite: Excel, Word, PowerPoint - Proficient in using these tools for data analysis, documentation, and presentations.
+
+                 Team Collaboration: Strong team player with excellent communication skills and the ability to work effectively in diverse groups.
+                  
+                  </p>
+                </li>
+                <li>
+
+                </li>
+            </div>
+            <!-- END Work Experience -->
+
+            <!-- Projects -->
+            <div>
+              <div
+                class="mb-8 border-b-4 border-gray-100 py-2.5 dark:border-gray-900"
+              >
+                <h3 class="text-xl font-medium">Projects</h3>
+              </div>
+              <ul
+                class="relative space-y-6 pl-6 before:absolute before:bottom-0 before:left-0 before:top-0 before:block before:w-1 before:rounded-full before:bg-purple-50 before:content-[''] dark:before:bg-purple-950"
+              >
+                <li
+                  class="before:border-1 relative before:absolute before:-left-[1.875rem] before:top-6 before:block before:size-4 before:rounded-full before:border-2 before:border-purple-200/75 before:bg-white before:content-[''] dark:before:border-purple-800/75 dark:before:bg-gray-950"
+                >
+                  <h4
+                    class="text-sm font-semibold text-purple-600 dark:text-purple-500"
+                  >
+                    C language
+                  </h4>
+                  <h5 class="mb-2 font-bold">
+                    C Programming Exercises
+                    <a
+                      class="font-medium text-black underline hover:text-black/75"
+                      href="javascript:void(0)"
+                      
+                    >
+                  </h5>
+                  <p class="text-sm/relaxed text-gray-700 dark:text-gray-300">
+
+                    Description: Undertook a series of complex coding challenges and exercises using Visual Studio Code, focusing on mastering the intricacies of C programming and developing robust solutions.
+
+                    Technologies Used: C, Visual Studio Code
+
+                Role: Sole developer responsible for writing, testing, and optimizing code to solve various algorithmic problems and real-world scenarios.
+                Outcome: Successfully completed a wide array of coding tasks, showcasing a high level of proficiency in C programming, debugging, and problem-solving. 
+                Demonstrated the ability to write clean, efficient code and continuously improve coding techniques.
+                  </p>
+                </li>
+                <li
+                  class="before:border-1 relative before:absolute before:-left-[1.875rem] before:top-6 before:block before:size-4 before:rounded-full before:border-2 before:border-purple-200/75 before:bg-white before:content-[''] dark:before:border-purple-800/75 dark:before:bg-gray-950"
+                >
+
+              </ul>
+            </div>
+            <!-- END Projects -->
+
+            <!-- Social -->
+
+
+                  >
+                    linkedin
+                  
+                      https://linkedin.com
+
+                  >
+                </p>
+              </footer>
+              <!-- END Footer -->
+            </div>
+            <!-- END Social -->
+          </div>
+          <!-- END Bio -->
+        </div>
+      </div>
+    </div>
+    <!-- END Page Container -->
+  </body>
+</html>
+ 
